@@ -1,5 +1,5 @@
 # For Koreans
-[한국어 도움말](./README-KOR.md)이 있습니다!
+[한국어 도움말](./README-korean.md)이 있습니다!
 
 # How much do you trust the weather service?
 

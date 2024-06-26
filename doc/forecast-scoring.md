@@ -35,14 +35,12 @@ $$ \begin{equation}
     \begin{aligned}
         0 = \mathbb{E}[S_e (X_e, \mu_e)]
         & = a + b \mathbb{E}[|X_e - \mu_e|]
-
-        \\& = a + b \sigma_e \mathbb{E} \left[
+        \\ & = a + b \sigma_e \mathbb{E} \left[
             \left|
                 \frac{X_e - \mu_e}{\sigma_e}
             \right|
         \right]
-
-        \\& = a + b \sigma_e \mathbb{E}[| Z |]
+        \\ & = a + b \sigma_e \mathbb{E}[| Z |]
     \end{aligned}
 \end{equation} $$
 
@@ -59,12 +57,10 @@ By applying the property above to equation (5):
 $$ \begin{equation}
     \begin{aligned}
         0 & = a + b \sigma_e \mathbb{E}[| Z |]
-
-        \\& = a + b \sigma_e \left(
+        \\ & = a + b \sigma_e \left(
             \frac{\sqrt{2}}{\sqrt{\pi}} \cdot 1
         \right)
-
-        \\& = 100 + \frac{\sqrt{2}\sigma_e}{\sqrt{\pi}} b
+        \\ & = 100 + \frac{\sqrt{2}\sigma_e}{\sqrt{\pi}} b
     \end{aligned}
 \end{equation} $$
 

@@ -1,0 +1,3 @@
+[api]
+# Path to the API key file relative to this setting file
+api-key-file = "secret/example-api-key.toml"

@@ -1,1 +1,2 @@
-secret/
+setting/secret/*
+!setting/secret/example-api-key.toml

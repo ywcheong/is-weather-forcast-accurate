@@ -3,9 +3,33 @@
     <head>
         <title>일기예보 점수</title>
         <!-- Vue.js 개발버전 -->
+        <link rel="stylesheet" href="style/main.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="script/main.js"></script>
     </head>
-    <body>
-        <!-- TODO -->
+    <body id="score-weather">
+        <!-- 랭킹 목록 : 각 기상청 점수 비교 -->
+        <div id="ranking-list">
+            <!-- 순위별 정보 박스 -->
+            <div class="ranking-inst" id="place-1">
+                <div class="inst-name">대한민국 기상청</div>
+                <div class="inst-score">82<span class="inst-score-tail">/100점</span></div>
+                <div class="inst-place">1등<span class="inst-place-delta">▲2</span></div>
+            </div>
+        </div>
+
+        <!-- 지도 : 주요 감점요인 표기 -->
+        <div id="korea-map">
+            <!-- TODO -->
+        </div>
+
+        <!-- 하단: 제작자 정보 및 채점기준 표기 -->
+        <div id="footer">
+            <ui>
+                <li>만든이</li>
+                <li>채점기준</li>
+                <li>소스코드</li>
+            </ui>
+        </div>
     </body>
 </html>

@@ -51,11 +51,11 @@
 참값이 정규분포 $X \sim N (\mu, \sigma^2)$를 따른다고 할 때, 위와 같은 가정을 토대로 수학적으로 분석하면 예보점수함수는 다음과 같은 형태를 가지게 됩니다.
 
 $$ S(X, \hat{X}) =
-100 \left\{
+100 \left(
     1 - \left(
         \frac{X - \hat{X}}{\sigma}
     \right) ^2
-\right\} $$
+\right) $$
 
 위 수식의 유도에 대해서는 [예보점수 함수 증명(영어)](./forecast-scoring.md)을 참조하세요.
 

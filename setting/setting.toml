@@ -1,3 +1,37 @@
-[api]
+# ==========================================================
+# Secret API Key Setting
+
+[secret]
 # Path to the API key file relative to this setting file
 api-key-file = "secret/example-api-key.toml"
+
+# ==========================================================
+# Scoring Weight Setting
+
+[weight.index]
+# List of Tracking Indicies
+sky     = 25
+precip  = 25
+temp    = 25
+wind    = 15
+humid   = 10
+
+[weight.location]
+# List of Tracking Locations
+gyeonggi    = 50
+gangwon     = 5
+chungcheong = 10
+jeolla      = 10
+gyeongsang  = 25
+
+[weight.time]
+# Unit of Scoring time
+time_unit = 3
+
+# Total using of Scoring Time
+time_using = 24
+
+# ==========================================================
+# Institution Settings
+
+[institute.KMA]

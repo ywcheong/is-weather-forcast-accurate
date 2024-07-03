@@ -1,0 +1,33 @@
+{
+  "name": "is-weather-forcast-accurate",
+  "version": "0.0.1",
+  "description": "The Korea Meteorological Administration is notorious for making wrong weather forecasts. Let's evaluate their scores.",
+  "main": "source/server/server.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ywcheong/is-weather-forcast-accurate.git"
+  },
+  "keywords": [
+    "KMA",
+    "Weather",
+    "Forecast",
+    "Score",
+    "Static",
+    "AWS"
+  ],
+  "author": "youngwoon cheong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ywcheong/is-weather-forcast-accurate/issues"
+  },
+  "homepage": "https://github.com/ywcheong/is-weather-forcast-accurate#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1653.0"
+  }
+}

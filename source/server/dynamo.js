@@ -1,14 +1,17 @@
+const assert = require('assert');
+
+const SECOND_TO_TIMESTAMP = 1000;
+const MINUTE_TO_TIMESTAMP = 60 * SECOND_TO_TIMESTAMP;
+const HOUR_TO_TIMESTAMP = 60 * MINUTE_TO_TIMESTAMP;
+
+/**
+ * Represents a DynamoDB instance.
+ */
 class DynamoDB {
     constructor() {
         
     }
 }
-
-const { Inspector } = require("aws-sdk");
-
-const SECOND_TO_TIMESTAMP = 1000;
-const MINUTE_TO_TIMESTAMP = 60 * SECOND_TO_TIMESTAMP;
-const HOUR_TO_TIMESTAMP = 60 * MINUTE_TO_TIMESTAMP;
 
 /**
  * Represents a TimeKey, which is a specific date and time.
@@ -23,9 +26,10 @@ class TimeKey {
      * @returns {TimeKey} A new TimeKey instance.
      */
     static create(year, month, day, hour) {
-        if(year < 0 || month < 1 || month > 12 || day < 1 || day > 31 || hour < 0 || hour > 23) {
-            throw new Error('Invalid time format');
-        }
+        assert(2000 <= year && year <= 2099, 'Year must be between 2000 and 2099');
+        assert(1 <= month && month <= 12, 'Month must be between 1 and 12');
+        assert(1 <= day && day <= 31, 'Day must be between 1 and 31');
+        assert(0 <= hour && hour <= 23, 'Hour must be between 0 and 23');
 
         const keyDate = new Date(year, month - 1, day, hour);
         return new TimeKey(keyDate);
@@ -69,28 +73,45 @@ class TimeKey {
     }
 }
 
+/**
+ * Represents a SortKey, which is used for sorting weather data.
+ */
 class SortKey {
-    static create(type, ){
+    /**
+     * Creates a new SortKey instance with the specified type and subkey.
+     * @param {string} type - The type of the SortKey.
+     * @param {string[]} subkey - The subkey list of the SortKey.
+     * @returns {SortKey} A new SortKey instance.
+     */
+    static create(type, ...subkey){
+        if(type === 'TRUE'){
+            assert(subkey.length === 0, `Invalid subkey: ${subkey}. Must be empty for TRUE type`);
+        }else if(type == 'PRED'){
+            assert(subkey.length === 2, `Invalid subkey: ${subkey}. Must have length 2 for PRED type`);
+        }else if(type == 'SCORE'){
+            assert(subkey.length === 1, `Invalid subkey: ${subkey}. Must have length 2 for SCORE type`);
+        }else{
+            throw new Error(`Invalid type: ${type} for SortKey. Must be one of 'TRUE', 'PRED', 'SCORE'`);
+        }
 
+        return new SortKey(type, subkey);
     }
 
-    constructor() {
-
+    constructor(type, subkey) {
+        this.type = type;
+        this.subkey = subkey;
     }
 
+    /**
+     * Returns a string representation of the SortKey.
+     * @returns {string} The string representation of the SortKey.
+     */
     toString() {
+        if(this.subkey.length === 0)
+            return `${this.type}`;
 
+        return `${this.type}#${this.subkey.join('.')}`;
     }
 }
 
-class WeatherDataUnit {
-    constructor() {
-        this.weatherList = {};
-    }
-
-    insert(location, weatherData){
-        this.weatherList[location] = weatherData;
-    }
-}
-
-module.exports = { TimeKey, SortKey, WeatherDataUnit, DynamoDB };
+module.exports = { TimeKey, SortKey, DynamoDB };

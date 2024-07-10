@@ -1,9 +1,13 @@
 # Do not store secret files, except example secret
-setting/secret
-!setting/secret/example-api-key.toml
+config/secret
+!config/secret/example-api-key.toml
 
 # node dependecies
 node_modules
 
 # jest coverage
 coverage
+
+# /src/frontend -> /out/frontend
+# /src/backend -> /out/backend
+out

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "outDir": "../out/frontend",
+        "rootDir": "./frontend",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "./frontend"
+    ],
+    "exclude": [
+        "../node_modules",
+        "../out"
+    ]
+}

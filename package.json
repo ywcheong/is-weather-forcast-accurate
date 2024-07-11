@@ -1,13 +1,11 @@
 {
-  "name": "is-weather-forcast-accurate",
+  "name": "wrong-weather-forcast",
   "version": "0.1.0",
-  "description": "The Korea Meteorological Administration is notorious for making wrong weather forecasts. Let's evaluate their scores.",
+  "description": " The Korea Meteorological Administration is notorious for making wrong weather forecasts, but nobody knows how much do they wrong. So I want to know it.",
   "main": "source/server/server.js",
   "scripts": {
-    "copy:front": "npx copyfiles -u 2 \"src/frontend/**/*.!(ts)\" out/frontend",
-    "build:front": "npx tsc --project src/tsconfig.front.json --outDir out/frontend --rootDir src/frontend && npm run copy:front",
-    "build:back": "npx tsc --project src/tsconfig.back.json --outDir out/backend --rootDir src/backend",
-    "build": "npm run build:front && npm run build:back",
+    "copy": "npx copyfiles -u 2 \"src/**/*.!(ts)\" out",
+    "build": "npx tsc  --outDir out --rootDir src && npm run copy",
     "clean": "rm -rf ./out",
     "test": "jest --coverage"
   },
@@ -40,6 +38,9 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "aws-sdk": "^2.1657.0"
+    "@aws-sdk/client-dynamodb": "^3.614.0",
+    "@aws-sdk/lib-dynamodb": "^3.614.0",
+    "aws-sdk": "^2.1657.0",
+    "toml": "^3.0.0"
   }
 }

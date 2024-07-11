@@ -1,12 +1,21 @@
 # ==========================================================
-# Secret API Key Setting
+# |                    AWS Configuation                    |
+# ==========================================================
+
+[AWS]
+region = 'ap-northeast-2'
+
+# ==========================================================
+# |              Secret API Key Configuation               |
+# ==========================================================
 
 [secret]
 # Path to the API key file relative to this setting file
 api-key-file = "secret/example-api-key.toml"
 
 # ==========================================================
-# Scoring Weight Setting
+# |              Scoring Weight Configuation               |
+# ==========================================================
 
 [weight.index]
 # List of Tracking Indicies
@@ -25,13 +34,11 @@ jeolla      = 10
 gyeongsang  = 25
 
 [weight.time]
-# Unit of Scoring time
-time_unit = 3
-
-# Total using of Scoring Time
-time_using = 24
+length_of_frame = 3
+number_of_using_frame = 24
 
 # ==========================================================
-# Institution Settings
+# |              Per-Institution Configuation              |
+# ==========================================================
 
 [institute.KMA]

@@ -1,3 +1,6 @@
+# vscode file
+.vscode
+
 # Do not store secret files, except example secret
 config/secret
 !config/secret/example-api-key.toml

@@ -1,8 +1,9 @@
-# For Koreans
-[한국어 도움말](./docs/README-korean.md)이 있습니다!
+*Are you Korean? [Check this link for Korean README](./docs/README-korean.md)!*
 
-# How much do you trust the weather service?
+# Wrong Weather Forecast
 
-![Poor Demo](./asset/demo-but-so-poor.png)
+![Poor Demo](./assets/demo-but-so-poor.png)
 
-You've probably heard that the [Korea Meteorological Administration(KMA)](https://www.kma.go.kr/neng/index.do) is often wrong with its forecasts, so let's quantify whether they're really wrong or not.
+The [Korea Meteorological Administration(KMA)](https://www.kma.go.kr/neng/index.do) is notorious for making wrong weather forecasts, but nobody knows how much do they wrong. So I want to know it. 
+
+*Goal: 100% Statement Coverage*

@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/ywcheong/is-weather-forcast-accurate#readme",
   "devDependencies": {
-    "@types/aws-sdk": "^2.7.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
     "copyfiles": "^2.4.1",
@@ -39,8 +38,6 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.614.0",
-    "@aws-sdk/lib-dynamodb": "^3.614.0",
-    "aws-sdk": "^2.1657.0",
     "toml": "^3.0.0"
   }
 }

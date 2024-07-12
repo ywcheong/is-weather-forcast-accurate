@@ -4,6 +4,7 @@
 
 [AWS]
 region = 'ap-northeast-2'
+dynamo-table-name = 'scoreweather-dynamo'
 
 # ==========================================================
 # |              Secret API Key Configuation               |

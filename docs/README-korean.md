@@ -1,5 +1,9 @@
-# 기상청을 얼마나 믿으시나요?
+*Are you not Korean? [Check this link for English README](../README.md)!*
 
-![하찮은 데모](./assets/demo-but-so-poor.png)
+# Wrong Weather Forecast
 
-[대한민국 기상청](https://www.weather.go.kr/w/index.do)이 내놓는 일기예보가 자주 틀린다는 이야기는 들어 보셨을 겁니다. 진짜로 기상청이 틀렸는지 아닌지를 객관적으로 다른 일기예보 서비스와 비교하면서 점수를 매겨 봅시다. 채점 방법은 [이 문서](/docs/system-explained.md)를 확인하세요.
+![하찮은 데모](../assets/demo-but-so-poor.png)
+
+[대한민국 기상청](https://www.kma.go.kr/neng/index.do)은 잦은 예보로 악명이 높지만, 언제 얼마나 틀리는지는 아무도 모릅니다. 이 프로젝트는 기상청의 오보를 시각화 및 수치화합니다.
+
+*목표 : 코드 커버리지 100% 달성하기*

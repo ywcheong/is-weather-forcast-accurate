@@ -1,5 +1,7 @@
 import { readFileSync } from "fs";
 import { resolve } from "path";
+
+// @ts-ignore
 import { parse } from "toml";
 
 const configFileLocation = "../../config/config.toml"

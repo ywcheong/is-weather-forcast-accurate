@@ -84,30 +84,32 @@ export class SortKey {
     }
 
     isComplete(): boolean {
-        if (this.keytype === "true") {
-            return true;
-        } else if (this.keytype === "score") {
-            return this.institute !== null;
-        } else if (this.keytype === "pred") {
-            return this.institute !== null && this.timeframe !== null;
-        } else {
-            return false;
-        }
+        if (this.keytype === "true") return true;
+
+        if (this.keytype === "score") return this.institute !== null;
+
+        if (this.keytype === "pred") return this.institute !== null && this.timeframe !== null;
+
+        return false;
     }
 
     toString(): string {
-        if(!this.isComplete())
-            throw new Error("Incomplete key");
-
         if (this.keytype === "true") {
             return "true";
-        } else if (this.keytype === "score") {
-            return `score#${this.institute}`;
-        } else if (this.keytype === "pred") {
-            return `pred#${this.institute}.U${this.timeframe}`;
-        } else {
-            throw new Error("Impossible");
         }
+
+        if (this.keytype === "score") {
+            if (this.institute === null) return `score`;
+            return `score#${this.institute}`;
+        }
+
+        if (this.keytype === "pred") {
+            if (this.institute === null) return `pred`;
+            if (this.timeframe === null) return `pred#${this.institute}`;
+            return `pred#${this.institute}.U${this.timeframe}`;
+        }
+
+        throw new Error("Impossible");
     }
 }
 
@@ -145,7 +147,7 @@ export class RegionWeather {
     toJSON() {
         return JSON.stringify({
             region: this.region,
-            data: this.data
+            data: this.data,
         });
     }
 }

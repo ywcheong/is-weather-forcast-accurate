@@ -33,21 +33,18 @@ describe("TimeKey", () => {
 
 describe("SortKey", () => {
     test("should make a string well", () => {
-        const trueKey = SortKey.create("true");
-        expect(trueKey.toString()).toBe("true");
+        expect(SortKey.create("true").toString()).toBe("true");
 
-        const scoreKey = SortKey.create("score", "WDY");
-        expect(scoreKey.toString()).toBe("score#WDY");
+        expect(SortKey.create("score").toString()).toBe("score");
+        expect(SortKey.create("score", "WDY").toString()).toBe("score#WDY");
 
-        const predKey = SortKey.create("pred", "KMA", 3);
-        expect(predKey.toString()).toBe("pred#KMA.U3");
+        expect(SortKey.create("pred").toString()).toBe("pred");
+        expect(SortKey.create("pred", "KMA").toString()).toBe("pred#KMA");
+        expect(SortKey.create("pred", "KMA", 3).toString()).toBe("pred#KMA.U3");
 
         expect(() => SortKey.create("wrong" as any)).toThrow();
+        expect(() => (new SortKey('wrong' as any, null, null).toString())).toThrow();
         expect(() => SortKey.create("pred", null as any, 3)).toThrow();
-    });
-
-    test("should not make a string with incomplete key", () => {
-        expect(() => SortKey.create("pred", "KMA").toString()).toThrow();
     });
 
     test("should decide if key is complete", () => {
